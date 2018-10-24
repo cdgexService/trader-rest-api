@@ -21,21 +21,21 @@ Return:
 ```json
 
 {
-    "success": true | False,
+    "success": "true",
     "data": [
         {
-            "market": <trading_pair>,   
-            "date": 1540360609022,      
-            "sell":null,                
-            "buy":null
-            ,"high":0,
-            "high24h":0,
-            "low":0,
-            "low24h":0,
-            "last":0,
-            "last24h":0,
-            "vol":0,
-            "vol24h":0
+            "market": <trading_pair>,  #交易对名称 
+            "date": 1540360609022,     #当前时间 
+            "sell":null,               #当前卖出价
+            "buy":null		       #当前买入价
+            ,"high":0,                 #最价高
+            "high24h":0,               #24小时最高价
+            "low":0,                   #最低价
+            "low24h":0,                #24小时最低价
+            "last":0,                  #最新成交价
+            "last24h":0,               #24小时最新成交价
+            "vol":0,                   #当前交易量
+            "vol24h":0                 #24小时交易量
         }
     ]
 }
@@ -58,12 +58,12 @@ Return:
 {
     "success": true || false,
     "data":{
-        "market":<trading_pair>,
+        "market":<trading_pair>,                #交易对名称
         "buy":[
 			[
-				3138900,
-				15000000,
-				15000000
+				3138900,        #价格
+				15000000,       #数量
+				15000000        #总数量
 			],
 			[
 				3139000,
@@ -116,15 +116,15 @@ Return:
     "success": true
     "data":
 		{
-			"trader":<trader_api_key>,
+			"trader":<trader_api_key>,                  #交易对名称
 			"assets":
 			[
 				{
-					"asset":<asset>,
-					"balance":"2000000000",
-					"available":"1999900000"
-					"frozen":"100000",
-					"state":"1"
+					"asset":<asset>,            #币种名称
+					"balance":"2000000000",     #余额
+					"available":"1999900000"    #可用数量
+					"frozen":"100000",          #冻结数量
+					"state":"1"                 #状态默认为1正常
 				},
 				...
 			]
@@ -152,11 +152,11 @@ Headers:
 Body:
 ```json
 {
-    "trading_pair":<trading_pair>,
-    "side":<BUY|SELL>,
-    "vol":<vol>,
-    "price":<price>,
-    "type":"limit"
+    "trading_pair":<trading_pair>,          #交易对名称
+    "side":<BUY|SELL>,                      #方向 BUY 或 SELL
+    "vol":<vol>,                            #下单数量
+    "price":<price>,                        #下单价格
+    "type":"limit"                          #下单类型，默认为 limit 限价
 }
 ```
 
@@ -168,8 +168,8 @@ URL:
 Return:
 ```json
 {
-    "success": true,
-    "result": <order_id>
+    "success": true,                       #状态
+    "result": <order_id>                   #订单 ID
 }
 ```
 
@@ -195,10 +195,10 @@ URL:
 Return:
 ```json
 {
-    "success": true,
+    "success": true,                #状态
     "data":
 	[
-		id1,
+		id1,                #订单 ID
 		id2,
 		id3,
 		...
@@ -225,10 +225,10 @@ Headers:
 Body:
 ```json
 {
-    "trading_pair":<trading_pair>,
+    "trading_pair":<trading_pair>,         #交易对名称
     "order_ids":
 	[
-		id1,
+		id1,                       #订单 ID
 		id2,
 		id3,
 		...
@@ -244,7 +244,7 @@ URL:
 Return:
 ```json
 {
-    "success": true,
-    "data": <order_id>
+    "success": true,                   #状态
+    "data": <order_id>                 #最新的订单 ID
 }
 ```
