@@ -2,7 +2,7 @@
 
 ---
 
-
+## URL: https://www.cdgex.com/
 ---
 
 ## 获取 ticker 列表
